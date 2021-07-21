@@ -1,0 +1,15 @@
+.mediaList {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 100vw;
+    flex-wrap: wrap;
+    max-height: 85vh;
+    /*background-color: pink;*/
+    overflow: auto;
+}
+@media screen and (max-width: 1280px) {
+    .mediaList {
+        margin-top: 60px;
+    }
+}

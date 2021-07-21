@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import AppBar from '@material-ui/core/AppBar';
-import {Toolbar, Typography} from "@material-ui/core";
+import {CssBaseline, Toolbar, Typography} from "@material-ui/core";
+import MediaCardList from "../components/MediaCardList";
 
 export default function Home() {
     return (
@@ -16,22 +17,24 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
+            <CssBaseline/>
             <AppBar position="absolute" color="default">
                 <Toolbar>
                     <Typography variant="h6" color="inherit" noWrap>
-                        Demo Client: ANIME Cards
+                        Home Code Project
                     </Typography>
                 </Toolbar>
             </AppBar>
             <main className={styles.main}>
-                <Typography variant="h1" color="inherit" noWrap>
-                    Initial view
-                </Typography>
+                <MediaCardList />
+                {/*<Typography variant="h1" color="inherit" noWrap>*/}
+                {/*    Initial view*/}
+                {/*</Typography>*/}
             </main>
 
-            <footer className={styles.footer}>
-                info in the footer
-            </footer>
+            {/*<footer className={styles.footer}>*/}
+            {/*    info in the footer*/}
+            {/*</footer>*/}
         </div>
     )
 }

@@ -1,12 +1,13 @@
 .container {
   min-height: 100vh;
+  max-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .main {
@@ -14,8 +15,9 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer {

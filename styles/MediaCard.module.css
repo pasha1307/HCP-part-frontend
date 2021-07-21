@@ -1,0 +1,14 @@
+.wrap {
+    max-width: 345px;
+    margin: 1rem;
+}
+.media {
+    height: 140px;
+}
+
+@media screen and (max-width: 1080px) {
+    .wrap {
+        max-width: 300px;
+        margin: 1rem;
+    }
+}
