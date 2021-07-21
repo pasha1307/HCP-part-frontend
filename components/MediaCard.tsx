@@ -1,6 +1,7 @@
 import styles from '../styles/MediaCard.module.css';
 import {Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography} from "@material-ui/core";
-// import { Markup } from 'react-render-markup';
+import parse from 'html-react-parser';
+
 const MediaCard = (props: any) => {
     return (
         <Card className={styles.wrap}>
@@ -15,8 +16,7 @@ const MediaCard = (props: any) => {
                         {props.title}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        {/*<Markup markup={props.description.slice(0,100) + "..."} />*/}
-                        {props.description.slice(0,100) + "..."}
+                        {parse(props.description.slice(0,200) + "...")}
                     </Typography>
                 </CardContent>
             </CardActionArea>

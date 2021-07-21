@@ -4,6 +4,7 @@ import {Pagination} from "@material-ui/lab";
 import {animeList} from "../data/graphql/queries";
 import styles from '../styles/MediaCardList.module.css';
 import Loader from "./Loader";
+import parse from 'html-react-parser';
 
 const MediaCardList = () => {
     const [media, setMedia] = useState([]);
@@ -60,7 +61,7 @@ const MediaCardList = () => {
     }
     const handleError = (err: any) => console.log(err);
 
-    const varsData = (p, count) => {
+    const varsData = (p: any, count: any) => {
         return {
             page: p,
             perPage: count
