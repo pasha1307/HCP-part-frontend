@@ -5,6 +5,7 @@ import {animeList} from "../data/graphql/queries";
 import styles from '../styles/MediaCardList.module.css';
 import Loader from "./Loader";
 import parse from 'html-react-parser';
+import {API_URL} from "../data/config/api-url";
 
 const MediaCardList = () => {
     const [media, setMedia] = useState([]);
@@ -17,7 +18,7 @@ const MediaCardList = () => {
     }, [])
     const handleChange = (event: any, value: any) => {
         setIsLoading(true)
-        const urlAPI = process.env.apiUrl;
+        const urlAPI = API_URL;
         const q = animeList;
         const variables = varsData(value, 7);
         const options = {
@@ -69,7 +70,7 @@ const MediaCardList = () => {
     }
 
     const handleApiData = () => {
-        const urlAPI = process.env.apiUrl;
+        const urlAPI = API_URL;
         const q = animeList;
         const variables = varsData(1, 7);
         const options = {
@@ -89,15 +90,20 @@ const MediaCardList = () => {
             .then(handleData)
             .catch(handleError);
     }
+    // @ts-ignore
     return (
         <>
             {!loading && media && media.length > 0 &&
             <div className={styles.mediaList}>
                 {media.map(elm => (
                         <MediaCard
+                            // @ts-ignore
                             key={elm.id}
+                            // @ts-ignore
                             title={elm.title}
+                            // @ts-ignore
                             description={elm.description}
+                            // @ts-ignore
                             image={elm.image}
                         />
                     )
